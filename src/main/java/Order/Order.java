@@ -3,22 +3,24 @@ package Order;
 import Customer.Customer;
 import Product.Product;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Order {
 
     private int id;
     private Customer customer;
-    private List<Product> productList = new ArrayList<>();
+    private Map<Integer,Product> productList = new HashMap<>();
     private boolean orderState;
 
-    public Order(int id, Customer customer, List<Product> productList, boolean orderState) {
+    public Order(int id, Customer customer, Map<Integer, Product> productList, boolean orderState) {
         this.id = id;
         this.customer = customer;
         this.productList = productList;
         this.orderState = orderState;
+    }
+
+    public void changeState(boolean state){
+        this.orderState = state;
     }
 
     public int getId() {
@@ -29,7 +31,7 @@ public class Order {
         return customer;
     }
 
-    public List<Product> getProductList() {
+    public Map<Integer, Product> getProductList() {
         return productList;
     }
 

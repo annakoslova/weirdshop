@@ -8,10 +8,11 @@ import Product.ProductController;
 import java.util.List;
 import java.util.Map;
 
-public interface OrderController extends CustomerController, ProductController{
+public interface OrderController{
 
-    void createOrder(Customer customer, List<Product> productList);
-    void readOrder();
+    void createOrder(Customer customer, Map<Integer, Product> productList);
+    void readOrder(int id);
+    void closeOrder(int id);
     Map<Integer, Order> allOrders();
 
     // Create, Close, (Recount), Read (find(see) all products)

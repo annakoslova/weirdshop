@@ -1,11 +1,17 @@
 import Customer.Customer;
 import Customer.CustomerControllerImpl;
+import Order.OrderControllerImpl;
+import Product.Product;
 import Product.ProductControllerImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppShop {
 
     CustomerControllerImpl customers = new CustomerControllerImpl();
     ProductControllerImpl products = new ProductControllerImpl();
+    OrderControllerImpl orders = new OrderControllerImpl();
 
     public static void main(String[] args) {
         AppShop appShop = new AppShop();
@@ -34,5 +40,12 @@ public class AppShop {
 
         System.out.println(appShop.products.getProductList());
         System.out.println("");
+
+        int a = 0;
+        int b = 1;
+        appShop.orders.createOrder(appShop.customers.allCustomers().get(a), appShop.products.getProductList());
+        appShop.orders.createOrder(appShop.customers.allCustomers().get(b), appShop.products.getProductList());
+
+        System.out.println(appShop.orders.allOrders());
     }
 }

@@ -45,8 +45,4 @@ public class ProductControllerImpl implements ProductController{
         }
         return id;
     }
-
-//    private Product newProduct(String name, double price, double weight, boolean legal){
-//        Product product = new Product(products.get(generateId()), name, price, weight, legal);
-//    }
 }
